@@ -83,6 +83,94 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Payment Methods / Delivery / Verified */}
+      <div className="border-t border-gray-100 mt-2">
+        <div className="max-w-[1200px] mx-auto px-6 py-6 flex gap-8">
+
+          {/* Payment Methods */}
+          <div className="flex-1">
+            <p className="text-gray-500 text-xs mb-3">Payment Methods</p>
+            <div className="grid grid-cols-4 gap-1.5">
+              {[
+                { label: "LAZADA\nWALLET", color: "#f57224", text: "white" },
+                { label: "VISA", color: "#1a1f71", text: "white" },
+                { label: "Maybank", color: "#fbcf0a", text: "#333" },
+                { label: "CIMB", color: "#bb2525", text: "white" },
+                { label: "Hong\nLeong", color: "#003087", text: "white" },
+                { label: "Public\nBank", color: "#b30000", text: "white" },
+                { label: "RHB", color: "#005baa", text: "white" },
+                { label: "Bank\nIslam", color: "#006633", text: "white" },
+                { label: "MyDebit", color: "#d4001a", text: "white" },
+                { label: "7-Eleven", color: "#007b40", text: "white" },
+                { label: "99\nSpeedmart", color: "#e2001a", text: "white" },
+                { label: "Touch\nn Go", color: "#0099da", text: "white" },
+                { label: "AMEX", color: "#2671b8", text: "white" },
+                { label: "UnionPay", color: "#c0392b", text: "white" },
+              ].map((p) => (
+                <div
+                  key={p.label}
+                  className="border border-gray-200 rounded flex items-center justify-center px-1 py-1.5 text-center"
+                  style={{ backgroundColor: p.color, minHeight: "32px" }}
+                >
+                  <span className="text-[9px] font-bold leading-tight whitespace-pre-line" style={{ color: p.text }}>
+                    {p.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Delivery Services */}
+          <div className="min-w-[200px]">
+            <p className="text-gray-500 text-xs mb-3">Delivery Services</p>
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-3">
+                <div className="border border-gray-200 rounded px-2 py-1 flex items-center gap-1">
+                  <span className="text-[#f57224] font-bold text-[10px]">Lazada</span>
+                  <span className="text-gray-500 text-[10px]">Logistics</span>
+                </div>
+                <div className="border border-gray-200 rounded px-2 py-1">
+                  <span className="text-[#7c3aed] font-bold text-[10px]">ninja</span>
+                  <span className="text-gray-600 text-[10px]"> van</span>
+                </div>
+                <div className="border border-gray-200 rounded px-2 py-1">
+                  <span className="text-[#005baa] font-bold text-[10px] tracking-wider">SKYNET</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="border border-gray-200 rounded px-2 py-1">
+                  <span className="text-[#e2001a] font-bold text-[10px]">J&T</span>
+                  <span className="text-gray-500 text-[9px]">EXPRESS</span>
+                </div>
+                <div className="border border-gray-200 rounded px-2 py-1">
+                  <span className="text-[#e2001a] font-bold text-[10px]">J&T</span>
+                  <span className="text-gray-500 text-[9px]">CARGO</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Verified by */}
+          <div className="min-w-[160px]">
+            <p className="text-gray-500 text-xs mb-3">Verified by</p>
+            <div className="flex items-center gap-2">
+              <div className="border border-gray-200 rounded px-2 py-1.5 text-center">
+                <p className="text-[8px] text-gray-400 leading-none">ISO/IEC</p>
+                <p className="text-[9px] font-bold text-gray-700 leading-none">27001</p>
+                <p className="text-[7px] text-gray-400 leading-tight">Information Security<br/>Management</p>
+              </div>
+              <div className="border border-gray-200 rounded px-2 py-1.5 flex items-center justify-center">
+                <div className="text-center">
+                  <p className="text-[8px] font-bold text-[#003087]">PCI DSS</p>
+                  <p className="text-[7px] text-[#e2001a] font-bold">@SCC</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
       {/* Bottom copyright */}
       <div className="border-t border-gray-100 py-3">
         <p className="text-center text-gray-400 text-xs">© Lazada 2024. All rights reserved.</p>
