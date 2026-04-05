@@ -30,7 +30,7 @@ export default function HeroBanner() {
   const goTo = (i: number) => { setCurrent(i); resetTimer(); };
 
   return (
-    <div className="flex gap-2 mb-2">
+    <div className="flex gap-2 mb-2" style={{ backgroundColor: "#FFE9DA", padding: "8px 8px 0 8px" }}>
       {/* Main banner slider */}
       <div className="flex-1 relative rounded-sm overflow-hidden bg-gray-100" style={{ minHeight: 260 }}>
         <img
@@ -44,7 +44,7 @@ export default function HeroBanner() {
         {/* Prev arrow */}
         <button
           onClick={prev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow transition-colors"
+          className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white hover:bg-white rounded-full flex items-center justify-center shadow transition-colors"
         >
           <ChevronLeft size={18} className="text-gray-600" />
         </button>
@@ -52,7 +52,7 @@ export default function HeroBanner() {
         {/* Next arrow */}
         <button
           onClick={next}
-          className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow transition-colors"
+          className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white hover:bg-white rounded-full flex items-center justify-center shadow transition-colors"
         >
           <ChevronRight size={18} className="text-gray-600" />
         </button>
