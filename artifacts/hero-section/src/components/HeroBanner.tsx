@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
@@ -11,9 +11,23 @@ const slides = [
 
 export default function HeroBanner() {
   const [current, setCurrent] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const prev = () => setCurrent((c) => (c - 1 + slides.length) % slides.length);
-  const next = () => setCurrent((c) => (c + 1) % slides.length);
+  const resetTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setCurrent((c) => (c + 1) % slides.length);
+    }, 3000);
+  };
+
+  useEffect(() => {
+    resetTimer();
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, []);
+
+  const prev = () => { setCurrent((c) => (c - 1 + slides.length) % slides.length); resetTimer(); };
+  const next = () => { setCurrent((c) => (c + 1) % slides.length); resetTimer(); };
+  const goTo = (i: number) => { setCurrent(i); resetTimer(); };
 
   return (
     <div className="flex gap-2 mb-2">
@@ -44,13 +58,15 @@ export default function HeroBanner() {
         </button>
 
         {/* Dots */}
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 items-center">
           {slides.map((_, i) => (
             <button
               key={i}
-              onClick={() => setCurrent(i)}
-              className={`w-2 h-2 rounded-full transition-colors ${
-                i === current ? "bg-white shadow" : "bg-white/50"
+              onClick={() => goTo(i)}
+              className={`rounded-full transition-all duration-300 ${
+                i === current
+                  ? "w-4 h-2 bg-white shadow"
+                  : "w-2 h-2 bg-white/50 hover:bg-white/75"
               }`}
             />
           ))}
@@ -72,11 +88,11 @@ export default function HeroBanner() {
 
         {/* Rating bar */}
         <div
-          className="px-3 py-1.5 flex items-center gap-1"
+          className="px-3 py-1.5 flex items-center gap-1 overflow-hidden"
           style={{
             backgroundImage: "url('/rated-bg.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundSize: "100% 100%",
+            backgroundRepeat: "no-repeat",
           }}
         >
           <span className="text-yellow-300 text-sm">★</span>
