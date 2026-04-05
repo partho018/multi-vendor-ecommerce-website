@@ -5,6 +5,7 @@ import FeatureRow from "@/components/FeatureRow";
 import CampaignBanner from "@/components/CampaignBanner";
 import FlashSale from "@/components/FlashSale";
 import LazMallSection from "@/components/LazMallSection";
+import CategoriesSection from "@/components/CategoriesSection";
 
 export default function HeroPage() {
   return (
@@ -17,6 +18,7 @@ export default function HeroPage() {
         <CampaignBanner />
         <FlashSale />
         <LazMallSection />
+        <CategoriesSection />
       </main>
     </div>
   );
