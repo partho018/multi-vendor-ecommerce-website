@@ -96,7 +96,7 @@ export default function HeroBanner() {
           }}
         >
           <span className="text-yellow-300 text-sm">★</span>
-          <span className="text-white text-[11px] font-bold">4.8 Rated</span>
+          <span style={{ color: "rgb(255,255,255)", fontSize: "10px", fontWeight: 500, lineHeight: "14px" }}>4.8 Rated</span>
         </div>
 
         {/* Gradient features section */}
