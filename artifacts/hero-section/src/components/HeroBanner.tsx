@@ -104,7 +104,7 @@ export default function HeroBanner() {
           className="px-3 pt-2.5 pb-3"
           style={{ background: "linear-gradient(160deg, #f97316 0%, #fb923c 30%, #f43f7a 70%, #ec4899 100%)" }}
         >
-          <p className="text-white text-[11px] font-semibold mb-2.5">Get the Lazada App to Enjoy</p>
+          <p style={{ color: "rgb(255,255,255)", fontSize: "12px", fontWeight: 500, lineHeight: "14px" }} className="mb-2.5">Get the Lazada App to Enjoy</p>
 
           <div className="space-y-2">
             {/* Free Shipping */}
