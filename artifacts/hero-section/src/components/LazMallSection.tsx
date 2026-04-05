@@ -72,7 +72,7 @@ export default function LazMallSection() {
               </div>
 
               {/* Brand logo badge - overlapping bottom border */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 bg-white border border-gray-100 rounded shadow-sm w-12 h-12 flex items-center justify-center overflow-hidden p-1">
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 bg-white border border-gray-200 rounded shadow-sm flex items-center justify-center overflow-hidden" style={{ width: "60px", height: "30px", padding: "3px" }}>
                 <img
                   src={b.logoImage}
                   alt={b.name}
