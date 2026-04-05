@@ -3,8 +3,8 @@ import { Search } from "lucide-react";
 export default function Header() {
   return (
     <div className="bg-white border-b border-gray-200 shadow-sm">
-      <div className="max-w-[1200px] mx-auto px-2 flex items-center gap-4 h-[64px]">
-        {/* Logo */}
+      <div className="max-w-[1200px] mx-auto px-2 h-[64px] relative flex items-center">
+        {/* Logo - left */}
         <a href="#" className="flex-shrink-0">
           <div className="flex items-center gap-1">
             <div className="w-8 h-8 flex items-center justify-center">
@@ -17,8 +17,8 @@ export default function Header() {
           </div>
         </a>
 
-        {/* Search bar */}
-        <div className="flex-1 flex items-center max-w-[600px]">
+        {/* Search bar - absolutely centered */}
+        <div className="absolute left-1/2 -translate-x-1/2 w-[480px] flex items-center">
           <div className="flex w-full border-2 border-[#f57224] rounded-sm overflow-hidden">
             <input
               type="text"
@@ -31,17 +31,15 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="flex-1" />
-
-        {/* Cart */}
-        <a href="#" className="flex-shrink-0">
-          <img src="/icon-cart.png" alt="Cart" className="h-[28px] w-auto" />
-        </a>
-
-        {/* Lazada Wallet */}
-        <a href="#" className="flex-shrink-0">
-          <img src="/btn-lazada-wallet.png" alt="Lazada Wallet" className="h-[38px] w-auto" />
-        </a>
+        {/* Right side - cart + wallet */}
+        <div className="ml-auto flex items-center gap-4">
+          <a href="#" className="flex-shrink-0">
+            <img src="/icon-cart.png" alt="Cart" className="h-[28px] w-auto" />
+          </a>
+          <a href="#" className="flex-shrink-0">
+            <img src="/btn-lazada-wallet.png" alt="Lazada Wallet" className="h-[38px] w-auto" />
+          </a>
+        </div>
       </div>
     </div>
   );
