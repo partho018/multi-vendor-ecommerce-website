@@ -96,18 +96,18 @@ export default function Footer() {
                 { src: "/pay-visa.png", alt: "VISA" },
                 { src: "/pay-hongleong.png", alt: "Hong Leong" },
                 { src: "/pay-cimb.png", alt: "CIMB" },
-                { src: "/pay-rhb.png", alt: "RHB" },
                 { src: "/pay-publicbank.png", alt: "Public Bank" },
+                { src: "/pay-rhb.png", alt: "RHB" },
                 { src: "/pay-bankislam.png", alt: "Bank Islam" },
                 { src: "/pay-ambank.png", alt: "AmBank" },
-                { src: "/pay-amex.png", alt: "American Express" },
                 { src: "/pay-7eleven.png", alt: "7-Eleven" },
                 { src: "/pay-99speedmart.png", alt: "99 Speedmart" },
                 { src: "/pay-touchngo.png", alt: "Touch n Go" },
+                { src: "/pay-amex.png", alt: "American Express" },
                 { src: "/pay-unionpay.png", alt: "UnionPay" },
               ].map((p) => (
-                <div key={p.alt} className="border border-gray-200 rounded flex items-center justify-center p-1" style={{ minHeight: "36px" }}>
-                  <img src={p.src} alt={p.alt} className="max-h-[28px] max-w-full object-contain" />
+                <div key={p.alt} className="border border-gray-200 rounded flex items-center justify-center p-1.5" style={{ minHeight: "40px" }}>
+                  <img src={p.src} alt={p.alt} className="max-h-[30px] max-w-full object-contain" />
                 </div>
               ))}
             </div>
