@@ -4,42 +4,42 @@ const brands = [
     name: "SweetDream Official",
     sub: "SweetDream Official",
     productImage: "/laz-p6.webp",
-    logoText: "SweetDream",
+    logoImage: "/laz-logo6.avif",
   },
   {
     id: 2,
     name: "Popo",
     sub: "Popo",
     productImage: "/laz-p5.avif",
-    logoText: "Popo",
+    logoImage: "/laz-logo5.avif",
   },
   {
     id: 3,
     name: "Karcher",
     sub: "Karcher",
     productImage: "/laz-p4.avif",
-    logoText: "KÄRCHER",
+    logoImage: "/laz-logo4.avif",
   },
   {
     id: 4,
     name: "DOBOHT Sanitaryware",
     sub: "All for Sanitaryware",
     productImage: "/laz-p3.avif",
-    logoText: "DOBOHT",
+    logoImage: "/laz-logo3.avif",
   },
   {
     id: 5,
     name: "BOXY",
     sub: "BOXY",
     productImage: "/laz-p2.avif",
-    logoText: "BOXY",
+    logoImage: "/laz-logo2.avif",
   },
   {
     id: 6,
     name: "ARNO",
     sub: "ARNO",
     productImage: "/laz-p1.webp",
-    logoText: "Arno",
+    logoImage: "/laz-logo1.avif",
   },
 ];
 
@@ -59,7 +59,7 @@ export default function LazMallSection() {
         {brands.map((b) => (
           <div
             key={b.id}
-            className="cursor-pointer group rounded hover:shadow-md transition-all duration-200 overflow-visible"
+            className="cursor-pointer group rounded bg-white shadow-sm hover:shadow-md transition-shadow duration-200 overflow-visible"
           >
             {/* Product image area */}
             <div className="relative bg-white rounded-t overflow-visible" style={{ paddingBottom: "24px" }}>
@@ -72,8 +72,12 @@ export default function LazMallSection() {
               </div>
 
               {/* Brand logo badge - overlapping bottom border */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 bg-white border border-gray-200 rounded px-2 py-1 shadow-sm min-w-[56px] flex items-center justify-center">
-                <span className="text-[10px] font-bold text-gray-700 whitespace-nowrap">{b.logoText}</span>
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 bg-white border border-gray-100 rounded shadow-sm w-14 h-8 flex items-center justify-center overflow-hidden">
+                <img
+                  src={b.logoImage}
+                  alt={b.name}
+                  className="w-full h-full object-contain"
+                />
               </div>
             </div>
 
