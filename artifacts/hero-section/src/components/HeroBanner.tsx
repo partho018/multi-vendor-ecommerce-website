@@ -209,7 +209,14 @@ export default function HeroBanner() {
         </div>
 
         {/* Rating bar */}
-        <div className="bg-[#f57224] px-3 py-1.5 flex items-center gap-1">
+        <div
+          className="px-3 py-1.5 flex items-center gap-1"
+          style={{
+            backgroundImage: "url('/rated-bg.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <span className="text-yellow-300 text-sm">★</span>
           <span className="text-white text-[11px] font-bold">4.8 Rated</span>
         </div>
