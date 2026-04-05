@@ -54,12 +54,11 @@ export default function JustForYou() {
     <div className="mt-3">
       <h2 className="text-xl font-bold text-gray-900 mb-2 px-1">Just For You</h2>
 
-      <div className="grid grid-cols-6">
+      <div className="grid grid-cols-6 gap-[3px]">
         {products.map((p) => (
           <div
             key={p.id}
-            className="bg-white border border-gray-200 cursor-pointer hover:shadow-md transition-shadow duration-200 flex flex-col"
-            style={{ marginRight: "-1px", marginBottom: "-1px" }}
+            className="bg-white cursor-pointer hover:shadow-md transition-shadow duration-200 flex flex-col"
           >
             {/* Image */}
             <div className="relative w-full bg-white overflow-hidden" style={{ paddingTop: "100%" }}>
