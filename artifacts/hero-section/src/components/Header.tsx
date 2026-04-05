@@ -18,7 +18,7 @@ export default function Header() {
         </a>
 
         {/* Search bar - absolutely centered */}
-        <div className="absolute left-1/2 -translate-x-1/2 w-[600px] flex items-center">
+        <div className="absolute left-1/2 -translate-x-1/2 w-[680px] flex items-center">
           <div className="flex w-full rounded-sm overflow-hidden" style={{ backgroundColor: "#EFF0F5" }}>
             <input
               type="text"
