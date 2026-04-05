@@ -47,36 +47,36 @@ export default function Footer() {
           {/* Spacer */}
           <div className="flex-1" />
 
-          {/* Always Better — center area */}
-          <div className="flex items-center gap-3 self-center">
-            <img
-              src="/laz-app-icon.png"
-              alt="Lazada App"
-              className="w-[52px] h-[52px] rounded-xl object-cover flex-shrink-0"
-            />
-            <div>
-              <p className="text-[#f57224] font-semibold text-sm leading-snug">Always Better</p>
-              <p className="text-gray-500 text-xs">Download the App</p>
+          {/* Always Better + App Buttons group */}
+          <div className="flex items-center gap-4 self-center">
+            {/* Always Better */}
+            <div className="flex items-center gap-3 pr-4 border-r border-gray-200">
+              <img
+                src="/laz-app-icon.png"
+                alt="Lazada App"
+                className="w-[52px] h-[52px] rounded-xl object-cover flex-shrink-0"
+              />
+              <div>
+                <p className="text-[#f57224] font-semibold text-sm leading-snug">Always Better</p>
+                <p className="text-gray-500 text-xs">Download the App</p>
+              </div>
             </div>
-          </div>
 
-          {/* Spacer */}
-          <div className="flex-1" />
-
-          {/* App Buttons */}
-          <div className="flex flex-col gap-2 self-center">
-            <div className="flex gap-2">
-              <a href="#" className="hover:opacity-80 transition-opacity">
-                <img src="/btn-appstore.png" alt="App Store" className="h-9 object-contain" />
-              </a>
-              <a href="#" className="hover:opacity-80 transition-opacity">
-                <img src="/btn-googleplay.png" alt="Google Play" className="h-9 object-contain" />
-              </a>
-            </div>
-            <div>
-              <a href="#" className="hover:opacity-80 transition-opacity">
-                <img src="/btn-appgallery.png" alt="AppGallery" className="h-9 object-contain" />
-              </a>
+            {/* App Buttons */}
+            <div className="flex flex-col gap-2">
+              <div className="flex gap-2">
+                <a href="#" className="hover:opacity-80 transition-opacity">
+                  <img src="/btn-appstore.png" alt="App Store" className="h-9 object-contain" />
+                </a>
+                <a href="#" className="hover:opacity-80 transition-opacity">
+                  <img src="/btn-googleplay.png" alt="Google Play" className="h-9 object-contain" />
+                </a>
+              </div>
+              <div>
+                <a href="#" className="hover:opacity-80 transition-opacity">
+                  <img src="/btn-appgallery.png" alt="AppGallery" className="h-9 object-contain" />
+                </a>
+              </div>
             </div>
           </div>
 
