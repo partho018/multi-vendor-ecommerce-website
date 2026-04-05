@@ -104,9 +104,15 @@ export default function JustForYou() {
 
       {/* Promo Banners */}
       <div className="flex gap-[5px] mt-[5px]">
-        <img src="/promo-1.png" alt="Lazada Collection Point" className="flex-1 object-cover cursor-pointer" />
-        <img src="/promo-2.png" alt="Lazada Gift Card" className="flex-1 object-cover cursor-pointer" />
-        <img src="/promo-3.png" alt="Lazada Affiliate Program" className="flex-1 object-cover cursor-pointer" />
+        <div className="flex-1 overflow-hidden cursor-pointer">
+          <img src="/promo-1.png" alt="Lazada Collection Point" className="w-full h-full object-cover" />
+        </div>
+        <div className="flex-1 overflow-hidden cursor-pointer">
+          <img src="/promo-2.png" alt="Lazada Gift Card" className="w-full h-full object-cover" />
+        </div>
+        <div className="flex-1 overflow-hidden cursor-pointer">
+          <img src="/promo-3.png" alt="Lazada Affiliate Program" className="w-full h-full object-cover" />
+        </div>
       </div>
     </div>
   );
