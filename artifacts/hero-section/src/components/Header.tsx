@@ -18,12 +18,13 @@ export default function Header() {
         </a>
 
         {/* Search bar - absolutely centered */}
-        <div className="absolute left-1/2 -translate-x-1/2 w-[480px] flex items-center">
-          <div className="flex w-full border-2 border-[#f57224] rounded-sm overflow-hidden">
+        <div className="absolute left-1/2 -translate-x-1/2 w-[600px] flex items-center">
+          <div className="flex w-full rounded-sm overflow-hidden" style={{ backgroundColor: "#EFF0F5" }}>
             <input
               type="text"
               placeholder="Search in Lazada"
-              className="flex-1 px-4 py-2 text-sm outline-none text-gray-700 bg-white"
+              className="flex-1 px-4 py-2 text-sm outline-none text-gray-700"
+              style={{ backgroundColor: "#EFF0F5" }}
             />
             <button className="bg-[#f57224] hover:bg-[#e06510] px-4 flex items-center justify-center transition-colors">
               <Search size={18} className="text-white" />
