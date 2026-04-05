@@ -62,12 +62,13 @@ export default function LazMallSection() {
             className="cursor-pointer group rounded bg-white shadow-sm hover:shadow-md transition-shadow duration-200 overflow-visible"
           >
             {/* Product image area */}
-            <div className="relative bg-white rounded-t overflow-visible" style={{ paddingBottom: "24px" }}>
-              <div className="aspect-square bg-white flex items-center justify-center overflow-hidden rounded-t">
+            <div className="relative bg-white rounded-t overflow-visible" style={{ paddingBottom: "36px" }}>
+              <div className="aspect-square bg-white flex items-center justify-end flex-col overflow-hidden rounded-t pb-3">
                 <img
                   src={b.productImage}
                   alt={b.name}
-                  className="w-full h-full object-contain"
+                  className="w-full object-contain"
+                  style={{ maxHeight: "85%" }}
                 />
               </div>
 
