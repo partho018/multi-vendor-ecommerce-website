@@ -108,18 +108,8 @@ export default function HeroBanner() {
           <div className="space-y-2">
             {/* Free Shipping */}
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm overflow-hidden">
-                <div
-                  className="w-full h-full flex items-center justify-center rounded-full"
-                  style={{ background: "linear-gradient(135deg, #00c9b1 0%, #00a89d 100%)" }}
-                >
-                  <svg viewBox="0 0 28 28" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="8" width="16" height="11" rx="2" fill="white" opacity="0.9" />
-                    <path d="M18 12 L24 12 L26 16 L26 19 L18 19 Z" fill="white" opacity="0.9" />
-                    <circle cx="7" cy="21" r="2.5" fill="#00c9b1" stroke="white" strokeWidth="1.5" />
-                    <circle cx="21" cy="21" r="2.5" fill="#00c9b1" stroke="white" strokeWidth="1.5" />
-                  </svg>
-                </div>
+              <div className="w-9 h-9 rounded-full flex-shrink-0 overflow-hidden">
+                <img src="/icon-shipping.avif" alt="Free Shipping" className="w-full h-full object-cover" />
               </div>
               <div>
                 <p className="text-white text-[12px] font-bold leading-tight">Free</p>
@@ -129,16 +119,8 @@ export default function HeroBanner() {
 
             {/* Exclusive Vouchers */}
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm overflow-hidden">
-                <div
-                  className="w-full h-full flex items-center justify-center rounded-full"
-                  style={{ background: "linear-gradient(135deg, #f43f5e 0%, #e11d48 100%)" }}
-                >
-                  <svg viewBox="0 0 28 28" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 8 L14.5 8 Q15.5 8 16.2 8.7 L22.5 15 Q23.5 16 22.5 17 L17 22.5 Q16 23.5 15 22.5 L8.7 16.2 Q8 15.5 8 14.5 L8 3" fill="white" opacity="0.85" />
-                    <circle cx="10.5" cy="10.5" r="1.8" fill="#f43f5e" />
-                  </svg>
-                </div>
+              <div className="w-9 h-9 rounded-full flex-shrink-0 overflow-hidden">
+                <img src="/icon-voucher.avif" alt="Exclusive Vouchers" className="w-full h-full object-cover" />
               </div>
               <div>
                 <p className="text-white text-[12px] font-bold leading-tight">Exclusive</p>
