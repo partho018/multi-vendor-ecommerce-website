@@ -7,6 +7,7 @@ import FlashSale from "@/components/FlashSale";
 import LazMallSection from "@/components/LazMallSection";
 import CategoriesSection from "@/components/CategoriesSection";
 import JustForYou from "@/components/JustForYou";
+import Footer from "@/components/Footer";
 
 export default function HeroPage() {
   return (
@@ -22,6 +23,7 @@ export default function HeroPage() {
         <CategoriesSection />
         <JustForYou />
       </main>
+      <Footer />
     </div>
   );
 }
