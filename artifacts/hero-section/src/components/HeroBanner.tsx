@@ -107,7 +107,7 @@ export default function HeroBanner() {
           {/* Feature rows */}
           <div className="space-y-2">
             {/* Free Shipping */}
-            <div className="flex items-center gap-2.5 bg-white/15 rounded-lg px-2 py-2">
+            <div className="flex items-center gap-2.5">
               <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm overflow-hidden">
                 <div
                   className="w-full h-full flex items-center justify-center rounded-full"
@@ -128,7 +128,7 @@ export default function HeroBanner() {
             </div>
 
             {/* Exclusive Vouchers */}
-            <div className="flex items-center gap-2.5 bg-white/15 rounded-lg px-2 py-2">
+            <div className="flex items-center gap-2.5">
               <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm overflow-hidden">
                 <div
                   className="w-full h-full flex items-center justify-center rounded-full"
