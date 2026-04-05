@@ -23,7 +23,7 @@ export default function Header() {
             <input
               type="text"
               placeholder="Search in Lazada"
-              className="flex-1 px-4 py-2 text-sm outline-none text-gray-700"
+              className="flex-1 px-4 py-[10px] text-sm outline-none text-gray-700"
               style={{ backgroundColor: "#EFF0F5" }}
             />
             <button className="bg-[#f57224] hover:bg-[#e06510] px-4 flex items-center justify-center transition-colors">
