@@ -37,7 +37,7 @@ export default function FeatureRow() {
             <img
               src={f.titleImg}
               alt={f.title}
-              className="h-[20px] w-auto object-contain object-left mb-0.5"
+              className="h-[28px] w-auto object-contain object-left mb-0.5"
             />
             <span className="text-xs text-gray-500">{f.desc}</span>
           </div>
