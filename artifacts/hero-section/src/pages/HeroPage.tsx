@@ -6,6 +6,7 @@ import CampaignBanner from "@/components/CampaignBanner";
 import FlashSale from "@/components/FlashSale";
 import LazMallSection from "@/components/LazMallSection";
 import CategoriesSection from "@/components/CategoriesSection";
+import JustForYou from "@/components/JustForYou";
 
 export default function HeroPage() {
   return (
@@ -19,6 +20,7 @@ export default function HeroPage() {
         <FlashSale />
         <LazMallSection />
         <CategoriesSection />
+        <JustForYou />
       </main>
     </div>
   );
