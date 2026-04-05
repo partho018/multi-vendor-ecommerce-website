@@ -1,4 +1,4 @@
-import { Search, ShoppingCart } from "lucide-react";
+import { Search } from "lucide-react";
 
 export default function Header() {
   return (
@@ -32,19 +32,13 @@ export default function Header() {
         </div>
 
         {/* Cart */}
-        <a href="#" className="flex-shrink-0 flex items-center justify-center w-10 h-10 relative hover:text-[#f57224] transition-colors text-gray-700">
-          <ShoppingCart size={24} />
+        <a href="#" className="flex-shrink-0">
+          <img src="/icon-cart.png" alt="Cart" className="h-[28px] w-auto" />
         </a>
 
         {/* Lazada Wallet */}
-        <a
-          href="#"
-          className="flex-shrink-0 flex items-center gap-2 border border-[#0db4e3] rounded-full px-4 py-2 text-[#0db4e3] font-semibold text-sm hover:bg-blue-50 transition-colors"
-        >
-          <div className="w-5 h-5 rounded-full bg-[#0db4e3] flex items-center justify-center">
-            <span className="text-white text-[10px] font-bold">W</span>
-          </div>
-          <span>Lazada Wallet</span>
+        <a href="#" className="flex-shrink-0">
+          <img src="/btn-lazada-wallet.png" alt="Lazada Wallet" className="h-[38px] w-auto" />
         </a>
       </div>
     </div>
