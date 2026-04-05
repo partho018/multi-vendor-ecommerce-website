@@ -74,7 +74,7 @@ export default function HeroBanner() {
       </div>
 
       {/* Right sidebar - App download */}
-      <div className="w-[200px] flex-shrink-0 flex flex-col rounded-sm overflow-hidden border border-gray-200" style={{ backgroundColor: "#FFE9DA" }}>
+      <div className="w-[200px] flex-shrink-0 flex flex-col rounded-sm overflow-hidden border border-gray-200" style={{ backgroundColor: "#FFE8DC" }}>
         {/* Try App header */}
         <div className="bg-white px-3 py-2.5 flex items-center gap-2">
           <div
