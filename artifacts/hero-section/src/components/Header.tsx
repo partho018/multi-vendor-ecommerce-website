@@ -31,6 +31,8 @@ export default function Header() {
           </div>
         </div>
 
+        <div className="flex-1" />
+
         {/* Cart */}
         <a href="#" className="flex-shrink-0">
           <img src="/icon-cart.png" alt="Cart" className="h-[28px] w-auto" />
