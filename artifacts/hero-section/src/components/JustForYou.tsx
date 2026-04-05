@@ -96,7 +96,7 @@ export default function JustForYou() {
       </div>
 
       {/* Load More button */}
-      <div className="bg-white mt-[5px] py-4 flex items-center justify-center">
+      <div className="bg-white mt-[5px] pt-6 pb-4 flex items-center justify-center">
         <button className="border border-[#3dbdb7] text-[#3dbdb7] text-sm font-medium tracking-widest px-16 py-3 hover:bg-[#3dbdb7] hover:text-white transition-colors duration-200">
           LOAD MORE
         </button>
