@@ -31,7 +31,7 @@ export default function FeatureRow() {
         <a
           key={i}
           href="#"
-          className="bg-white rounded-sm border border-gray-200 flex items-center justify-between px-4 py-3 hover:shadow-md transition-shadow"
+          className="bg-white rounded-sm border border-gray-200 flex items-center justify-between px-6 py-4 hover:shadow-md transition-shadow"
         >
           <div className="flex flex-col">
             <img
