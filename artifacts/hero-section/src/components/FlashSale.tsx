@@ -83,7 +83,7 @@ function useCountdown(initialSeconds: number) {
 
 function TimerBlock({ value }: { value: number }) {
   return (
-    <span className="bg-[#f57224] text-white font-bold text-sm px-2 py-0.5 rounded min-w-[28px] text-center inline-block">
+    <span className="bg-[#D3232A] text-white font-bold text-sm px-3 py-1.5 rounded min-w-[28px] text-center inline-block">
       {String(value).padStart(2, "0")}
     </span>
   );
