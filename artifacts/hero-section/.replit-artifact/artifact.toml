@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Hero Section"
+version = "1.0.0"
+id = "artifacts/hero-section"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19307
+
+[services.development]
+run = "pnpm --filter @workspace/hero-section run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/hero-section", "run", "build" ]
+publicDir = "artifacts/hero-section/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19307"
+BASE_PATH = "/"
