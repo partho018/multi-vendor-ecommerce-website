@@ -114,7 +114,7 @@ export default function Footer() {
           </div>
 
           {/* Delivery Services */}
-          <div className="min-w-[180px]">
+          <div className="flex-1 flex flex-col items-center">
             <p className="text-gray-500 text-xs mb-3">Delivery Services</p>
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2 flex-wrap">
