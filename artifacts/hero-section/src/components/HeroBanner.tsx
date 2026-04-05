@@ -33,13 +33,27 @@ export default function HeroBanner() {
     <div className="flex gap-2 mb-2">
       {/* Main banner slider */}
       <div className="flex-1 relative rounded-sm overflow-hidden bg-gray-100" style={{ minHeight: 260 }}>
-        <img
-          key={current}
-          src={slides[current].src}
-          alt={slides[current].alt}
-          className="w-full h-full object-cover object-center"
-          style={{ minHeight: 260, maxHeight: 320 }}
-        />
+        {/* Sliding track */}
+        <div
+          className="flex h-full"
+          style={{
+            transform: `translateX(-${current * (100 / slides.length)}%)`,
+            transition: "transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            width: `${slides.length * 100}%`,
+            minHeight: 260,
+            maxHeight: 320,
+          }}
+        >
+          {slides.map((slide, i) => (
+            <img
+              key={i}
+              src={slide.src}
+              alt={slide.alt}
+              className="object-cover object-center"
+              style={{ width: `${100 / slides.length}%`, minHeight: 260, maxHeight: 320 }}
+            />
+          ))}
+        </div>
 
         {/* Prev arrow */}
         <button
