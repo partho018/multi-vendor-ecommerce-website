@@ -120,12 +120,12 @@ export default function FlashSale() {
       {/* Product grid */}
       <div className="grid grid-cols-6 gap-3">
         {products.map((p) => (
-          <div key={p.id} className="cursor-pointer group">
+          <div key={p.id} className="cursor-pointer group border border-transparent hover:border-gray-200 hover:shadow-md rounded transition-all duration-200 p-1">
             <div className="relative rounded overflow-hidden bg-gray-50 aspect-square mb-2">
               <img
                 src={p.image}
                 alt={p.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover"
               />
               {p.badge && (
                 <div className="absolute bottom-1 left-1 bg-[#f57224] text-white text-[9px] font-bold px-1.5 py-0.5 rounded">
