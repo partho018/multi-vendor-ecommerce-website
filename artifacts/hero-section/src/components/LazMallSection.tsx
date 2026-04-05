@@ -45,7 +45,7 @@ const brands = [
 
 export default function LazMallSection() {
   return (
-    <div className="bg-white rounded-sm mt-3 px-5 py-4">
+    <div className="mt-3 px-0 py-4">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-bold text-gray-900">LazMall</h2>
