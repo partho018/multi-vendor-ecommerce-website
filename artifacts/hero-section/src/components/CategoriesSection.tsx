@@ -32,11 +32,12 @@ export default function CategoriesSection() {
               className="cursor-pointer group flex flex-col items-center border border-gray-200"
             >
               {/* Image box */}
-              <div className="w-full aspect-square bg-white overflow-hidden">
+              <div className="w-full bg-white overflow-hidden flex items-center justify-center" style={{ height: "100px" }}>
                 <img
                   src={cat.image}
                   alt={cat.name}
-                  className="w-full h-full object-contain"
+                  className="object-contain"
+                  style={{ width: "80px", height: "80px" }}
                 />
               </div>
               {/* Label */}
