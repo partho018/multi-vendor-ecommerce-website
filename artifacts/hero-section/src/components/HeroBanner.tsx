@@ -86,26 +86,25 @@ export default function HeroBanner() {
           <p className="text-[12px] font-bold text-gray-800 leading-tight tracking-wide">TRY LAZADA APP</p>
         </div>
 
-        {/* Rating bar */}
+        {/* Combined rated + features section with single bg image */}
         <div
-          className="px-3 py-1.5 flex items-center gap-1 overflow-hidden"
+          className="px-3 pt-2 pb-3 overflow-hidden"
           style={{
             backgroundImage: "url('/rated-bg.png')",
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
           }}
         >
-          <span className="text-yellow-300 text-sm">★</span>
-          <span style={{ color: "rgb(255,255,255)", fontSize: "10px", fontWeight: 500, lineHeight: "14px" }}>4.8 Rated</span>
-        </div>
+          {/* Rating row */}
+          <div className="flex items-center gap-1 mb-2">
+            <span className="text-yellow-300 text-sm">★</span>
+            <span style={{ color: "rgb(255,255,255)", fontSize: "10px", fontWeight: 500, lineHeight: "14px" }}>4.8 Rated</span>
+          </div>
 
-        {/* Gradient features section */}
-        <div
-          className="px-3 pt-2.5 pb-3"
-          style={{ background: "linear-gradient(160deg, #f97316 0%, #fb923c 30%, #f43f7a 70%, #ec4899 100%)" }}
-        >
+          {/* Subtitle */}
           <p style={{ color: "rgb(255,255,255)", fontSize: "12px", fontWeight: 500, lineHeight: "14px" }} className="mb-2.5">Get the Lazada App to Enjoy</p>
 
+          {/* Feature rows */}
           <div className="space-y-2">
             {/* Free Shipping */}
             <div className="flex items-center gap-2.5 bg-white/15 rounded-lg px-2 py-2">
