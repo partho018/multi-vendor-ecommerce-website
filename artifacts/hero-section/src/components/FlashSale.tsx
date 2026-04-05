@@ -39,7 +39,7 @@ const products = [
     brand: "MERIL",
     brandColor: "#d32f2f",
     name: "Meril Splash Moisturizing Toilet Soap 100g Pack...",
-    image: "/flash-p4.webp",
+    image: "/flash-p4-meril.avif",
     price: "৳ 55",
     originalPrice: "৳ 70",
     discount: "-21%",
