@@ -112,7 +112,7 @@ export default function FlashSale() {
             <TimerBlock value={s as number} />
           </div>
         </div>
-        <button className="border border-[#f57224] text-[#f57224] text-sm font-semibold px-4 py-1.5 rounded hover:bg-orange-50 transition-colors">
+        <button className="border border-[#f57224] text-[#f57224] text-sm font-semibold px-4 py-3 rounded hover:bg-orange-50 transition-colors">
           SHOP ALL PRODUCTS
         </button>
       </div>
