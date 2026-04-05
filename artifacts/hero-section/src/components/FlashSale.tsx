@@ -50,7 +50,7 @@ const products = [
     brand: "Oral-B",
     brandColor: "#004b8d",
     name: "Oral-B Complete Easy Clean Soft Toothbrush 5...",
-    image: "https://images.unsplash.com/photo-1559591937-abc3e07e4e3d?w=200&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=200&h=200&fit=crop",
     price: "RM11.94",
     originalPrice: "RM15.50",
     discount: "-23%",
