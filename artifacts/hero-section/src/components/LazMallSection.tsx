@@ -45,7 +45,7 @@ const brands = [
 
 export default function LazMallSection() {
   return (
-    <div className="mt-3 px-0 py-4">
+    <div className="mt-3 px-5 py-4 bg-white">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-bold text-gray-900">LazMall</h2>
@@ -59,7 +59,7 @@ export default function LazMallSection() {
         {brands.map((b) => (
           <div
             key={b.id}
-            className="cursor-pointer group border border-gray-200 rounded hover:shadow-md transition-all duration-200 overflow-visible"
+            className="cursor-pointer group rounded hover:shadow-md transition-all duration-200 overflow-visible"
           >
             {/* Product image area */}
             <div className="relative bg-white rounded-t overflow-visible" style={{ paddingBottom: "24px" }}>
@@ -78,7 +78,7 @@ export default function LazMallSection() {
             </div>
 
             {/* Divider line */}
-            <div className="border-t border-gray-200" />
+            <div className="border-t border-gray-100" />
 
             {/* Text below */}
             <div className="pt-6 pb-3 px-2 text-center">
