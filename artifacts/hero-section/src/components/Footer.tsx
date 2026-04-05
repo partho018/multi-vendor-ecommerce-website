@@ -90,7 +90,7 @@ export default function Footer() {
           {/* Payment Methods */}
           <div className="flex-1">
             <p className="text-gray-500 text-xs mb-3">Payment Methods</p>
-            <div className="grid grid-cols-4 gap-1.5">
+            <div className="grid grid-cols-4 gap-[5px]">
               {[
                 { src: "/pay-lazwallet.png", alt: "Lazada Wallet" },
                 { src: "/pay-visa.png", alt: "VISA" },
@@ -106,7 +106,7 @@ export default function Footer() {
                 { src: "/pay-amex.png", alt: "American Express" },
                 { src: "/pay-unionpay.png", alt: "UnionPay" },
               ].map((p) => (
-                <div key={p.alt} className="border border-gray-200 rounded flex items-center justify-center p-1.5" style={{ minHeight: "40px" }}>
+                <div key={p.alt} className="flex items-center justify-center" style={{ minHeight: "40px" }}>
                   <img src={p.src} alt={p.alt} className="max-h-[30px] max-w-full object-contain" />
                 </div>
               ))}
