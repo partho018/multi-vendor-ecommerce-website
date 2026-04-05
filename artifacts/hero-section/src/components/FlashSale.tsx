@@ -117,6 +117,9 @@ export default function FlashSale() {
         </button>
       </div>
 
+      {/* Divider */}
+      <hr className="border-t border-gray-200 mb-4" />
+
       {/* Product grid */}
       <div className="grid grid-cols-6 gap-3">
         {products.map((p) => (
