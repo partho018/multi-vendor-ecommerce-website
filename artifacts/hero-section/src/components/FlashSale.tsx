@@ -95,24 +95,26 @@ export default function FlashSale() {
   return (
     <div className="bg-white rounded-sm mt-3 px-5 py-4">
       {/* Header row */}
-      <div className="flex items-center justify-between mb-3">
+      <div className="mb-3">
         <h2 className="text-xl font-bold text-gray-900">Flash Sale</h2>
-        <button className="border border-[#f57224] text-[#f57224] text-sm font-semibold px-4 py-1.5 rounded hover:bg-orange-50 transition-colors">
-          SHOP ALL PRODUCTS
-        </button>
       </div>
 
       {/* Timer row */}
-      <div className="flex items-center gap-3 mb-4">
-        <span className="text-[#f57224] font-semibold text-sm">On Sale Now</span>
-        <div className="flex items-center gap-1 text-gray-500 text-sm">
-          <span>Ending in</span>
-          <TimerBlock value={h as number} />
-          <span className="font-bold text-gray-700">:</span>
-          <TimerBlock value={m as number} />
-          <span className="font-bold text-gray-700">:</span>
-          <TimerBlock value={s as number} />
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-3">
+          <span className="text-[#f57224] font-semibold text-sm">On Sale Now</span>
+          <div className="flex items-center gap-1 text-gray-500 text-sm">
+            <span>Ending in</span>
+            <TimerBlock value={h as number} />
+            <span className="font-bold text-gray-700">:</span>
+            <TimerBlock value={m as number} />
+            <span className="font-bold text-gray-700">:</span>
+            <TimerBlock value={s as number} />
+          </div>
         </div>
+        <button className="border border-[#f57224] text-[#f57224] text-sm font-semibold px-4 py-1.5 rounded hover:bg-orange-50 transition-colors">
+          SHOP ALL PRODUCTS
+        </button>
       </div>
 
       {/* Product grid */}
