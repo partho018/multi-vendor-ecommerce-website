@@ -42,7 +42,7 @@ export default function FeatureRow() {
             <span className="text-xs text-gray-500">{f.desc}</span>
           </div>
           <div
-            className="flex-shrink-0 w-1/2 h-[72px] flex items-center justify-center rounded-2xl overflow-hidden"
+            className="flex-shrink-0 w-[72px] h-[56px] flex items-center justify-center rounded-2xl overflow-hidden"
             style={f.imgBg ? { backgroundColor: f.bgColor } : {}}
           >
             <img
