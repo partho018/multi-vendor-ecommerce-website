@@ -74,9 +74,9 @@ export default function HeroBanner() {
       </div>
 
       {/* Right sidebar - App download */}
-      <div className="w-[200px] flex-shrink-0 flex flex-col rounded-sm overflow-hidden border border-gray-200" style={{ backgroundColor: "#FFE8DC" }}>
+      <div className="w-[200px] flex-shrink-0 flex flex-col rounded-sm overflow-hidden border border-gray-200 text-left" style={{ backgroundColor: "#FFE8DC" }}>
         {/* Try App header */}
-        <div className="px-3 py-2.5 flex items-center gap-2">
+        <div className="px-3 py-2.5 flex items-center justify-start gap-2">
           <div
             className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
             style={{ background: "linear-gradient(135deg, #f57224 0%, #ff3c6b 100%)" }}
@@ -96,7 +96,7 @@ export default function HeroBanner() {
           }}
         >
           {/* Rating row */}
-          <div className="flex items-center gap-1 mb-2">
+          <div className="flex items-center justify-start gap-1 mb-2">
             <span className="text-yellow-300 text-sm">★</span>
             <span style={{ color: "rgb(255,255,255)", fontSize: "10px", fontWeight: 500, lineHeight: "14px" }}>4.8 Rated</span>
           </div>
@@ -132,7 +132,7 @@ export default function HeroBanner() {
 
         {/* QR + Buttons section */}
         <div className="px-3 pt-3 pb-3">
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 items-center justify-start">
             {/* QR code left */}
             <div className="w-[72px] h-[72px] flex-shrink-0 border border-gray-200 rounded overflow-hidden">
               <img src="/qrcode.avif" alt="QR Code" className="w-full h-full object-cover" />
