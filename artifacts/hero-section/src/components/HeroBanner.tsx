@@ -76,7 +76,7 @@ export default function HeroBanner() {
       {/* Right sidebar - App download */}
       <div className="w-[200px] flex-shrink-0 flex flex-col rounded-sm overflow-hidden border border-gray-200 text-left" style={{ backgroundColor: "#FFE8DC" }}>
         {/* Try App header */}
-        <div className="flex items-center justify-start gap-2" style={{ paddingTop: "5px", paddingRight: "5px" }}>
+        <div className="flex items-center justify-start gap-2" style={{ paddingTop: "5px", paddingRight: "5px", paddingBottom: "3px" }}>
           <div
             className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
             style={{ background: "linear-gradient(135deg, #f57224 0%, #ff3c6b 100%)" }}
