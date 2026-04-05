@@ -32,7 +32,7 @@ export default function CategoriesSection() {
               className="cursor-pointer group flex flex-col items-center"
             >
               {/* Image box */}
-              <div className="w-full aspect-square bg-gray-100 overflow-hidden mb-2 border border-gray-200">
+              <div className="w-full aspect-square bg-gray-100 overflow-hidden mb-2">
                 <img
                   src={cat.image}
                   alt={cat.name}
