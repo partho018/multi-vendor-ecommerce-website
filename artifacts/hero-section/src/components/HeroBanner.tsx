@@ -196,66 +196,98 @@ export default function HeroBanner() {
       </div>
 
       {/* Right sidebar - App download */}
-      <div className="w-[190px] flex-shrink-0 flex flex-col gap-0 rounded-sm overflow-hidden border border-gray-200">
+      <div className="w-[200px] flex-shrink-0 flex flex-col rounded-sm overflow-hidden border border-gray-200 bg-white">
         {/* Try App header */}
-        <div className="bg-white px-3 py-2 flex items-center gap-2 border-b border-gray-100">
-          <div className="w-7 h-7 bg-[#f57224] rounded flex items-center justify-center text-white font-black text-xs">
-            LAZ
+        <div className="bg-white px-3 py-2.5 flex items-center gap-2">
+          <div
+            className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+            style={{ background: "linear-gradient(135deg, #f57224 0%, #ff3c6b 100%)" }}
+          >
+            <span className="text-white font-black text-[10px] leading-none">LAZ</span>
           </div>
-          <div>
-            <p className="text-[11px] font-bold text-gray-800 leading-tight">TRY LAZADA APP</p>
-          </div>
+          <p className="text-[12px] font-bold text-gray-800 leading-tight tracking-wide">TRY LAZADA APP</p>
         </div>
 
-        {/* Rating */}
-        <div className="bg-[#f57224] px-3 py-1 flex items-center gap-1">
-          <span className="text-yellow-300 text-xs">★</span>
+        {/* Rating bar */}
+        <div className="bg-[#f57224] px-3 py-1.5 flex items-center gap-1">
+          <span className="text-yellow-300 text-sm">★</span>
           <span className="text-white text-[11px] font-bold">4.8 Rated</span>
         </div>
 
-        {/* Features */}
-        <div className="bg-white flex-1 px-3 py-2">
-          <p className="text-[10px] text-gray-600 mb-2">Get the Lazada App to Enjoy</p>
+        {/* Gradient features section */}
+        <div
+          className="px-3 pt-2.5 pb-3"
+          style={{ background: "linear-gradient(160deg, #f97316 0%, #fb923c 30%, #f43f7a 70%, #ec4899 100%)" }}
+        >
+          <p className="text-white text-[11px] font-semibold mb-2.5">Get the Lazada App to Enjoy</p>
 
           <div className="space-y-2">
-            <div className="flex items-center gap-2 bg-gray-50 rounded p-1.5">
-              <div className="w-7 h-7 bg-[#f57224] rounded flex items-center justify-center text-white text-xs flex-shrink-0">
-                🚚
+            {/* Free Shipping */}
+            <div className="flex items-center gap-2.5 bg-white/15 rounded-lg px-2 py-2">
+              <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm overflow-hidden">
+                <div
+                  className="w-full h-full flex items-center justify-center rounded-full"
+                  style={{ background: "linear-gradient(135deg, #00c9b1 0%, #00a89d 100%)" }}
+                >
+                  <svg viewBox="0 0 28 28" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="8" width="16" height="11" rx="2" fill="white" opacity="0.9" />
+                    <path d="M18 12 L24 12 L26 16 L26 19 L18 19 Z" fill="white" opacity="0.9" />
+                    <circle cx="7" cy="21" r="2.5" fill="#00c9b1" stroke="white" strokeWidth="1.5" />
+                    <circle cx="21" cy="21" r="2.5" fill="#00c9b1" stroke="white" strokeWidth="1.5" />
+                  </svg>
+                </div>
               </div>
               <div>
-                <p className="text-[11px] font-bold text-gray-800">Free</p>
-                <p className="text-[10px] text-gray-500">Shipping</p>
+                <p className="text-white text-[12px] font-bold leading-tight">Free</p>
+                <p className="text-white/80 text-[10px] leading-tight">Shipping</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-2 bg-gray-50 rounded p-1.5">
-              <div className="w-7 h-7 bg-[#f57224] rounded flex items-center justify-center text-white text-xs flex-shrink-0">
-                🎫
+            {/* Exclusive Vouchers */}
+            <div className="flex items-center gap-2.5 bg-white/15 rounded-lg px-2 py-2">
+              <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm overflow-hidden">
+                <div
+                  className="w-full h-full flex items-center justify-center rounded-full"
+                  style={{ background: "linear-gradient(135deg, #f43f5e 0%, #e11d48 100%)" }}
+                >
+                  <svg viewBox="0 0 28 28" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 9 Q4 7 6 7 L13 7 Q14 7 14.7 7.7 L21 14 Q22 15 21 16 L16 21 Q15 22 14 21 L7.7 14.7 Q7 14 7 13 L7 6 Q7 4 9 4" fill="none" stroke="white" strokeWidth="1.5" />
+                    <path d="M3 8 L14.5 8 Q15.5 8 16.2 8.7 L22.5 15 Q23.5 16 22.5 17 L17 22.5 Q16 23.5 15 22.5 L8.7 16.2 Q8 15.5 8 14.5 L8 3" fill="white" opacity="0.85" />
+                    <circle cx="10.5" cy="10.5" r="1.8" fill="#f43f5e" />
+                  </svg>
+                </div>
               </div>
               <div>
-                <p className="text-[11px] font-bold text-gray-800">Exclusive</p>
-                <p className="text-[10px] text-gray-500">Vouchers</p>
+                <p className="text-white text-[12px] font-bold leading-tight">Exclusive</p>
+                <p className="text-white/80 text-[10px] leading-tight">Vouchers</p>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* QR code placeholder */}
-          <div className="mt-3 flex flex-col items-center">
-            <div className="w-[80px] h-[80px] bg-gray-100 border border-gray-200 flex items-center justify-center rounded overflow-hidden">
-              <QRPattern />
-            </div>
-            <div className="mt-2 flex flex-col gap-1 w-full">
-              <button className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 text-white text-[10px] rounded px-2 py-1 justify-center transition-colors w-full">
-                <span>🍎</span>
-                <span className="font-semibold">App Store</span>
-              </button>
-              <button className="flex items-center gap-1 bg-gray-800 hover:bg-gray-700 text-white text-[10px] rounded px-2 py-1 justify-center transition-colors w-full">
-                <span>▶</span>
-                <span className="font-semibold">Google Play</span>
-              </button>
-            </div>
-            <p className="text-[9px] text-gray-400 text-center mt-1.5">Download the app now by scanning the QR code</p>
+        {/* QR + Buttons section */}
+        <div className="px-3 pt-3 pb-3 flex flex-col items-center bg-white">
+          <div className="w-[90px] h-[90px] border border-gray-200 flex items-center justify-center rounded overflow-hidden mb-2.5">
+            <QRPattern />
           </div>
+          <div className="flex flex-col gap-1.5 w-full">
+            <button className="flex items-center gap-2 bg-[#1c1c1e] hover:bg-[#2c2c2e] text-white text-[10px] rounded-md px-3 py-1.5 justify-center transition-colors w-full font-semibold">
+              <svg viewBox="0 0 14 14" width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 1 C4.5 1 3 3 3 5 C3 8 5.5 13 7 13 C8.5 13 11 8 11 5 C11 3 9.5 1 7 1 Z" fill="white" opacity="0.9" />
+                <ellipse cx="7" cy="3.5" rx="1.5" ry="2" fill="#1c1c1e" />
+              </svg>
+              App Store
+            </button>
+            <button className="flex items-center gap-2 bg-[#1c1c1e] hover:bg-[#2c2c2e] text-white text-[10px] rounded-md px-3 py-1.5 justify-center transition-colors w-full font-semibold">
+              <svg viewBox="0 0 14 14" width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="2,1 12,7 2,13" fill="white" opacity="0.9" />
+              </svg>
+              Google Play
+            </button>
+          </div>
+          <p className="text-[9px] text-gray-400 text-center mt-2 leading-tight">
+            Download the app now by scanning the QR code
+          </p>
         </div>
       </div>
     </div>
