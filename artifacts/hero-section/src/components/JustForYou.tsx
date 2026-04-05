@@ -54,7 +54,7 @@ export default function JustForYou() {
     <div className="mt-3">
       <h2 className="text-xl font-bold text-gray-900 mb-2 px-1">Just For You</h2>
 
-      <div className="grid grid-cols-6 gap-[3px]">
+      <div className="grid grid-cols-6 gap-[5px]">
         {products.map((p) => (
           <div
             key={p.id}
