@@ -25,7 +25,7 @@ export default function CategoriesSection() {
 
       {/* White card with 5px border radius */}
       <div className="bg-white px-5 py-4" style={{ borderRadius: "5px" }}>
-        <div className="grid grid-cols-8 gap-3">
+        <div className="grid grid-cols-8">
           {categories.map((cat) => (
             <div
               key={cat.id}
