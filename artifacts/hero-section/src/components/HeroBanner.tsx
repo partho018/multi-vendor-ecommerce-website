@@ -267,8 +267,8 @@ export default function HeroBanner() {
 
         {/* QR + Buttons section */}
         <div className="px-3 pt-3 pb-3 flex flex-col items-center bg-white">
-          <div className="w-[90px] h-[90px] border border-gray-200 flex items-center justify-center rounded overflow-hidden mb-2.5">
-            <QRPattern />
+          <div className="w-[90px] h-[90px] border border-gray-200 rounded overflow-hidden mb-2.5">
+            <img src="/qrcode.avif" alt="QR Code" className="w-full h-full object-cover" />
           </div>
           <div className="flex flex-col gap-1.5 w-full">
             <button className="flex items-center gap-2 bg-[#1c1c1e] hover:bg-[#2c2c2e] text-white text-[10px] rounded-md px-3 py-1.5 justify-center transition-colors w-full font-semibold">
@@ -294,41 +294,3 @@ export default function HeroBanner() {
   );
 }
 
-function QRPattern() {
-  return (
-    <svg viewBox="0 0 80 80" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-      {/* TL block */}
-      <rect x="5" y="5" width="22" height="22" rx="2" fill="none" stroke="#222" strokeWidth="3" />
-      <rect x="11" y="11" width="10" height="10" fill="#222" rx="1" />
-      {/* TR block */}
-      <rect x="53" y="5" width="22" height="22" rx="2" fill="none" stroke="#222" strokeWidth="3" />
-      <rect x="59" y="11" width="10" height="10" fill="#222" rx="1" />
-      {/* BL block */}
-      <rect x="5" y="53" width="22" height="22" rx="2" fill="none" stroke="#222" strokeWidth="3" />
-      <rect x="11" y="59" width="10" height="10" fill="#222" rx="1" />
-      {/* Data dots pattern */}
-      {[
-        [31,5],[35,5],[39,5],[43,5],[47,5],
-        [31,9],[39,9],[43,9],
-        [35,13],[43,13],[47,13],
-        [31,17],[39,17],
-        [35,21],[43,21],[47,21],
-        [31,25],[35,25],[43,25],
-        [39,29],[47,29],
-        [53,31],[57,31],[61,31],[65,31],[69,31],[73,31],
-        [31,35],[35,35],[43,35],[47,35],[51,35],[59,35],[73,35],
-        [31,39],[39,39],[51,39],[65,39],[69,39],
-        [31,43],[35,43],[43,43],[55,43],[63,43],[73,43],
-        [31,47],[47,47],[53,47],[61,47],[65,47],
-        [31,51],[35,51],[39,51],[51,51],[55,51],[59,51],[63,51],
-        [53,57],[59,57],[65,57],[73,57],
-        [53,61],[57,61],[63,61],[67,61],[71,61],
-        [53,65],[61,65],[65,65],[73,65],
-        [53,69],[57,69],[69,69],[73,69],
-        [53,73],[61,73],[65,73],[69,73],
-      ].map(([x,y],i) => (
-        <rect key={i} x={x} y={y} width="3" height="3" fill="#222" />
-      ))}
-    </svg>
-  );
-}
