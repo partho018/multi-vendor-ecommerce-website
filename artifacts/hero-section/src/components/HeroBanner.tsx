@@ -76,7 +76,7 @@ export default function HeroBanner() {
       {/* Right sidebar - App download */}
       <div className="w-[200px] flex-shrink-0 flex flex-col rounded-sm overflow-hidden border border-gray-200" style={{ backgroundColor: "#FFE8DC" }}>
         {/* Try App header */}
-        <div className="bg-white px-3 py-2.5 flex items-center gap-2">
+        <div className="px-3 py-2.5 flex items-center gap-2">
           <div
             className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
             style={{ background: "linear-gradient(135deg, #f57224 0%, #ff3c6b 100%)" }}
@@ -131,7 +131,7 @@ export default function HeroBanner() {
         </div>
 
         {/* QR + Buttons section */}
-        <div className="px-3 pt-3 pb-3 bg-white">
+        <div className="px-3 pt-3 pb-3">
           <div className="flex gap-2 items-center">
             {/* QR code left */}
             <div className="w-[72px] h-[72px] flex-shrink-0 border border-gray-200 rounded overflow-hidden">
