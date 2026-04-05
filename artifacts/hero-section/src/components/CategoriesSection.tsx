@@ -29,10 +29,10 @@ export default function CategoriesSection() {
           {categories.map((cat) => (
             <div
               key={cat.id}
-              className="cursor-pointer group flex flex-col items-center"
+              className="cursor-pointer group flex flex-col items-center border border-gray-200"
             >
               {/* Image box */}
-              <div className="w-full aspect-square bg-gray-100 overflow-hidden mb-2">
+              <div className="w-full aspect-square bg-white overflow-hidden">
                 <img
                   src={cat.image}
                   alt={cat.name}
@@ -40,9 +40,11 @@ export default function CategoriesSection() {
                 />
               </div>
               {/* Label */}
-              <p className="text-xs text-center text-gray-700 leading-tight line-clamp-2">
-                {cat.name}
-              </p>
+              <div className="w-full border-t border-gray-200 py-2 px-1">
+                <p className="text-xs text-center text-gray-700 leading-tight line-clamp-2">
+                  {cat.name}
+                </p>
+              </div>
             </div>
           ))}
         </div>
