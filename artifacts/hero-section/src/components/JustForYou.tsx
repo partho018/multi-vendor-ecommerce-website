@@ -54,13 +54,12 @@ export default function JustForYou() {
     <div className="mt-3">
       <h2 className="text-xl font-bold text-gray-900 mb-2 px-1">Just For You</h2>
 
-      <div className="grid grid-cols-6 gap-[5px]">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-[5px]">
         {products.map((p) => (
           <div
             key={p.id}
             className="bg-white cursor-pointer hover:shadow-md transition-shadow duration-200 flex flex-col"
           >
-            {/* Image */}
             <div className="relative w-full bg-white overflow-hidden" style={{ paddingTop: "100%" }}>
               <img
                 src={p.image}
@@ -74,18 +73,13 @@ export default function JustForYou() {
               )}
             </div>
 
-            {/* Info */}
             <div className="p-2 flex flex-col gap-1 flex-1">
               <p className="text-xs text-gray-700 line-clamp-2 leading-tight">{p.name}</p>
-
-              {/* Price row */}
               <div className="flex items-baseline gap-1 flex-wrap">
                 <span className="text-sm font-bold text-[#f57224]">৳{p.price}</span>
                 <span className="text-[10px] text-gray-400 line-through">৳{p.original}</span>
                 <span className="text-[10px] text-gray-500">-{p.discount}%</span>
               </div>
-
-              {/* Rating */}
               <div className="flex items-center gap-1">
                 <StarRating rating={p.rating} />
                 <span className="text-[10px] text-gray-400">({p.reviews})</span>
@@ -95,15 +89,13 @@ export default function JustForYou() {
         ))}
       </div>
 
-      {/* Load More button */}
       <div className="bg-white mt-[5px] pt-6 pb-4 flex items-center justify-center">
-        <button className="border border-[#3dbdb7] text-[#3dbdb7] text-sm font-medium tracking-widest px-16 py-3 hover:bg-[#3dbdb7] hover:text-white transition-colors duration-200">
+        <button className="border border-[#3dbdb7] text-[#3dbdb7] text-sm font-medium tracking-widest px-12 sm:px-16 py-3 hover:bg-[#3dbdb7] hover:text-white transition-colors duration-200">
           LOAD MORE
         </button>
       </div>
 
-      {/* Promo Banners */}
-      <div className="flex gap-[5px] mt-[5px]">
+      <div className="flex flex-col sm:flex-row gap-[5px] mt-[5px]">
         <div className="flex-1 overflow-hidden cursor-pointer">
           <img src="/promo-1.png" alt="Lazada Collection Point" className="w-full h-full object-cover" />
         </div>

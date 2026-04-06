@@ -26,30 +26,26 @@ const features = [
 
 export default function FeatureRow() {
   return (
-    <div className="grid grid-cols-3 gap-2 mb-2">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-2">
       {features.map((f, i) => (
         <a
           key={i}
           href="#"
-          className="bg-white rounded-sm border border-gray-200 flex items-center justify-between px-6 py-4 hover:shadow-md transition-shadow"
+          className="bg-white rounded-sm border border-gray-200 flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 hover:shadow-md transition-shadow"
         >
           <div className="flex flex-col">
             <img
               src={f.titleImg}
               alt={f.title}
-              className="h-[28px] w-auto object-contain object-left mb-0.5"
+              className="h-[24px] sm:h-[28px] w-auto object-contain object-left mb-0.5"
             />
             <span className="text-xs text-gray-500">{f.desc}</span>
           </div>
           <div
-            className="flex-shrink-0 w-[100px] h-[90px] flex items-center justify-center rounded-2xl overflow-hidden"
+            className="flex-shrink-0 w-[70px] h-[65px] sm:w-[100px] sm:h-[90px] flex items-center justify-center rounded-2xl overflow-hidden"
             style={f.imgBg ? { backgroundColor: f.bgColor } : {}}
           >
-            <img
-              src={f.img}
-              alt={f.title}
-              className="w-full h-full object-contain"
-            />
+            <img src={f.img} alt={f.title} className="w-full h-full object-contain" />
           </div>
         </a>
       ))}

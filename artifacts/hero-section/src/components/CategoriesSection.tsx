@@ -20,29 +20,25 @@ const categories = [
 export default function CategoriesSection() {
   return (
     <div className="mt-3">
-      {/* Title outside the box */}
       <h2 className="text-xl font-bold text-gray-900 mb-2 px-1">Categories</h2>
 
-      {/* White card with 5px border radius */}
-      <div className="bg-white px-5 py-4" style={{ borderRadius: "5px" }}>
-        <div className="grid grid-cols-8">
+      <div className="bg-white px-3 sm:px-5 py-4" style={{ borderRadius: "5px" }}>
+        <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8">
           {categories.map((cat) => (
             <div
               key={cat.id}
               className="cursor-pointer group flex flex-col items-center border border-gray-200 hover:opacity-80 transition-opacity duration-200"
             >
-              {/* Image box */}
-              <div className="w-full bg-white overflow-hidden flex items-center justify-center" style={{ height: "100px" }}>
+              <div className="w-full bg-white overflow-hidden flex items-center justify-center" style={{ height: "80px" }}>
                 <img
                   src={cat.image}
                   alt={cat.name}
                   className="object-contain"
-                  style={{ width: "80px", height: "80px" }}
+                  style={{ width: "64px", height: "64px" }}
                 />
               </div>
-              {/* Label */}
-              <div className="w-full py-2 px-1">
-                <p className="text-xs text-center text-gray-700 leading-tight line-clamp-2">
+              <div className="w-full py-1.5 px-1">
+                <p className="text-[10px] sm:text-xs text-center text-gray-700 leading-tight line-clamp-2">
                   {cat.name}
                 </p>
               </div>

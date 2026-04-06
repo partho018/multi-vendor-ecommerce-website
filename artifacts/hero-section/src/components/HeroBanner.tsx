@@ -32,15 +32,14 @@ export default function HeroBanner() {
   return (
     <div className="flex gap-2 mb-2">
       {/* Main banner slider */}
-      <div className="flex-1 relative rounded-sm overflow-hidden bg-gray-100" style={{ minHeight: 260 }}>
-        {/* Sliding track */}
+      <div className="flex-1 relative rounded-sm overflow-hidden bg-gray-100" style={{ minHeight: 180 }}>
         <div
           className="flex h-full"
           style={{
             transform: `translateX(-${current * (100 / slides.length)}%)`,
             transition: "transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
             width: `${slides.length * 100}%`,
-            minHeight: 260,
+            minHeight: 180,
             maxHeight: 320,
           }}
         >
@@ -50,7 +49,7 @@ export default function HeroBanner() {
               src={slide.src}
               alt={slide.alt}
               className="object-cover object-center"
-              style={{ width: `${100 / slides.length}%`, minHeight: 260, maxHeight: 320 }}
+              style={{ width: `${100 / slides.length}%`, minHeight: 180, maxHeight: 320 }}
             />
           ))}
         </div>
@@ -87,8 +86,8 @@ export default function HeroBanner() {
         </div>
       </div>
 
-      {/* Right sidebar - App download */}
-      <div className="w-[200px] flex-shrink-0 flex flex-col rounded-sm overflow-hidden border border-gray-200 text-left" style={{ backgroundColor: "#FFE8DC" }}>
+      {/* Right sidebar - hidden on mobile, visible on lg+ */}
+      <div className="hidden lg:flex w-[200px] flex-shrink-0 flex-col rounded-sm overflow-hidden border border-gray-200 text-left" style={{ backgroundColor: "#FFE8DC" }}>
         {/* Try App header */}
         <div className="flex items-center justify-start gap-2" style={{ paddingTop: "5px", paddingRight: "5px", paddingBottom: "3px" }}>
           <div
@@ -100,7 +99,6 @@ export default function HeroBanner() {
           <p className="text-[12px] font-bold text-gray-800 leading-tight tracking-wide">TRY LAZADA APP</p>
         </div>
 
-        {/* Combined rated + features section with single bg image */}
         <div
           className="px-3 pt-2 pb-3 overflow-hidden"
           style={{
@@ -109,18 +107,12 @@ export default function HeroBanner() {
             backgroundRepeat: "no-repeat",
           }}
         >
-          {/* Rating row */}
           <div className="flex items-center justify-start gap-1 mb-2">
             <span className="text-yellow-300 text-sm">★</span>
             <span style={{ color: "rgb(255,255,255)", fontSize: "10px", fontWeight: 500, lineHeight: "14px" }}>4.8 Rated</span>
           </div>
-
-          {/* Subtitle */}
           <p style={{ color: "rgb(255,255,255)", fontSize: "12px", fontWeight: 500, lineHeight: "14px" }} className="mb-2.5">Get the Lazada App to Enjoy</p>
-
-          {/* Feature rows */}
           <div className="space-y-2">
-            {/* Free Shipping */}
             <div className="flex items-center gap-2.5">
               <div className="w-9 h-9 rounded-full flex-shrink-0 overflow-hidden">
                 <img src="/icon-shipping.avif" alt="Free Shipping" className="w-full h-full object-cover" />
@@ -130,8 +122,6 @@ export default function HeroBanner() {
                 <p className="text-white/80 text-[10px] leading-tight">Shipping</p>
               </div>
             </div>
-
-            {/* Exclusive Vouchers */}
             <div className="flex items-center gap-2.5">
               <div className="w-9 h-9 rounded-full flex-shrink-0 overflow-hidden">
                 <img src="/icon-voucher.avif" alt="Exclusive Vouchers" className="w-full h-full object-cover" />
@@ -144,14 +134,11 @@ export default function HeroBanner() {
           </div>
         </div>
 
-        {/* QR + Buttons section */}
         <div className="pt-2 pb-2">
           <div className="flex gap-2 items-center justify-start">
-            {/* QR code left */}
             <div className="w-[72px] h-[72px] flex-shrink-0 border border-gray-200 rounded overflow-hidden">
               <img src="/qrcode.avif" alt="QR Code" className="w-full h-full object-cover" />
             </div>
-            {/* Buttons right */}
             <div className="flex flex-col gap-1.5 flex-1">
               <a href="#" className="block hover:opacity-80 transition-opacity">
                 <img src="/app-store-btn.png" alt="App Store" className="w-full h-auto object-contain" />
