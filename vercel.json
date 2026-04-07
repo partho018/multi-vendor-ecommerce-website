@@ -4,6 +4,13 @@
   "outputDirectory": "artifacts/hero-section/dist",
   "framework": "vite",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/artifacts/hero-section/dist/$1" }
+    {
+      "source": "/api/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
