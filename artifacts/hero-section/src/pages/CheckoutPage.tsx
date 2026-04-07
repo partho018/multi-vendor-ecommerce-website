@@ -139,6 +139,21 @@ export default function CheckoutPage() {
 
         <StepIndicator step={step} />
 
+        {/* Mobile compact order bar */}
+        {items.length > 0 && (
+          <div className="lg:hidden bg-white rounded p-3 mb-3 flex items-center justify-between">
+            <div className="text-sm text-gray-600">
+              <span className="font-medium">{items.reduce((s, i) => s + i.quantity, 0)} items</span>
+              <span className="text-gray-400 mx-1">·</span>
+              <span className="text-green-600 text-xs">Save ৳{discount.toLocaleString()}</span>
+            </div>
+            <div className="text-right">
+              <p className="text-xs text-gray-400">Total</p>
+              <p className="text-base font-black text-[#f57224]">৳{total.toLocaleString()}</p>
+            </div>
+          </div>
+        )}
+
         <div className="flex flex-col lg:flex-row gap-3">
           {/* Left panel */}
           <div className="flex-1 min-w-0">

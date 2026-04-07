@@ -1,12 +1,26 @@
-import { Search, ShoppingCart, User, LogOut } from "lucide-react";
+import { Search, ShoppingCart, User, LogOut, Menu, X } from "lucide-react";
 import { Link, useLocation } from "wouter";
+import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { useAuth } from "@/context/AuthContext";
+
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "All Products", href: "/shop" },
+  { label: "Flash Sale", href: "/shop" },
+  { label: "LazMall", href: "/shop" },
+  { label: "Electronics", href: "/shop?category=Electronics" },
+  { label: "Fashion", href: "/shop?category=Fashion" },
+  { label: "Home & Kitchen", href: "/shop?category=Home%20%26%20Kitchen" },
+  { label: "Food & Beverages", href: "/shop?category=Food%20%26%20Beverages" },
+  { label: "Health & Beauty", href: "/shop?category=Health%20%26%20Beauty" },
+];
 
 export default function Header() {
   const { totalItems } = useCart();
   const { user, logout, isAuthenticated } = useAuth();
   const [, navigate] = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
@@ -18,7 +32,6 @@ export default function Header() {
       <div className="max-w-[1200px] mx-auto px-2">
         {/* Desktop layout */}
         <div className="hidden md:flex items-center h-[64px] gap-4">
-          {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <div className="flex items-center gap-1">
               <div className="w-8 h-8 flex items-center justify-center">
@@ -31,7 +44,6 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Search bar - flex-grow */}
           <div className="flex-1 flex items-center">
             <div className="flex w-full rounded-sm overflow-hidden" style={{ backgroundColor: "#EFF0F5" }}>
               <input
@@ -48,7 +60,6 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Right side */}
           <div className="flex-shrink-0 flex items-center gap-4">
             <Link href="/cart" className="flex-shrink-0 relative">
               <div className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
@@ -100,7 +111,6 @@ export default function Header() {
         {/* Mobile layout */}
         <div className="flex md:hidden flex-col py-2 gap-2">
           <div className="flex items-center justify-between gap-2">
-            {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <div className="flex items-center gap-1">
                 <div className="w-7 h-7 flex items-center justify-center">
@@ -127,6 +137,13 @@ export default function Header() {
                   </span>
                 )}
               </Link>
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-gray-700"
+                aria-label="Menu"
+              >
+                {menuOpen ? <X size={22} /> : <Menu size={22} />}
+              </button>
             </div>
           </div>
 
@@ -144,20 +161,61 @@ export default function Header() {
               </button>
             </Link>
           </div>
+
+          {/* Mobile category scroll strip */}
+          <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-1 -mx-2 px-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="flex-shrink-0 text-xs text-gray-600 hover:text-[#f57224] whitespace-nowrap py-0.5 font-medium transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
+
+      {/* Mobile full menu drawer */}
+      {menuOpen && (
+        <div className="md:hidden bg-white border-t border-gray-100 shadow-lg">
+          <div className="max-w-[1200px] mx-auto px-4 py-3 space-y-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center justify-between py-2.5 border-b border-gray-50 text-sm text-gray-700 hover:text-[#f57224] transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+            {isAuthenticated ? (
+              <button
+                onClick={() => { handleLogout(); setMenuOpen(false); }}
+                className="w-full text-left py-2.5 text-sm text-red-400 hover:text-red-500 transition-colors"
+              >
+                Sign Out
+              </button>
+            ) : (
+              <Link href="/login" onClick={() => setMenuOpen(false)} className="flex py-2.5 text-sm text-[#f57224] font-semibold">
+                Login / Register
+              </Link>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Desktop nav links */}
       <div className="hidden md:block border-t border-gray-100 bg-white">
         <div className="max-w-[1200px] mx-auto px-2">
           <div className="flex items-center gap-6 text-xs text-gray-600 h-8">
-            <Link href="/" className="hover:text-[#f57224] transition-colors font-medium">Home</Link>
-            <Link href="/shop" className="hover:text-[#f57224] transition-colors">All Products</Link>
-            <Link href="/shop" className="hover:text-[#f57224] transition-colors">Flash Sale</Link>
-            <Link href="/shop" className="hover:text-[#f57224] transition-colors">LazMall</Link>
-            <Link href="/shop?category=Electronics" className="hover:text-[#f57224] transition-colors">Electronics</Link>
-            <Link href="/shop?category=Fashion" className="hover:text-[#f57224] transition-colors">Fashion</Link>
-            <Link href="/shop?category=Home%20%26%20Kitchen" className="hover:text-[#f57224] transition-colors">Home & Kitchen</Link>
+            {navLinks.slice(0, 7).map((link) => (
+              <Link key={link.label} href={link.href} className="hover:text-[#f57224] transition-colors whitespace-nowrap">
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

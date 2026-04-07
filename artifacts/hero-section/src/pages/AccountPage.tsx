@@ -59,9 +59,41 @@ export default function AccountPage() {
           <span className="text-gray-800">My Account</span>
         </div>
 
+        {/* Mobile: Profile card + Horizontal tab bar */}
+        <div className="md:hidden mb-3">
+          <div className="bg-white rounded p-3 mb-2 flex items-center gap-3">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#f57224] to-[#ff3c6b] flex items-center justify-center flex-shrink-0">
+              <span className="text-white text-lg font-black">{profile.name[0]}</span>
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="font-bold text-gray-900 truncate text-sm">{profile.name}</p>
+              <p className="text-xs text-gray-400 truncate">{profile.email}</p>
+            </div>
+            <button onClick={handleLogout} className="flex-shrink-0 text-xs text-red-400 border border-red-200 px-3 py-1.5 rounded hover:bg-red-50 transition-colors">
+              Sign Out
+            </button>
+          </div>
+
+          {/* Horizontal scrollable tabs */}
+          <div className="bg-white rounded flex overflow-x-auto scrollbar-hide">
+            {navItems.map(({ key, label, icon: Icon }) => (
+              <button
+                key={key}
+                onClick={() => setTab(key)}
+                className={`flex-shrink-0 flex flex-col items-center gap-1 px-4 py-2.5 text-[11px] font-medium border-b-2 transition-colors min-w-[72px] ${
+                  tab === key ? "border-[#f57224] text-[#f57224]" : "border-transparent text-gray-500"
+                }`}
+              >
+                <Icon size={16} />
+                <span className="whitespace-nowrap">{label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="flex flex-col md:flex-row gap-3">
-          {/* Sidebar */}
-          <div className="md:w-[240px] flex-shrink-0">
+          {/* Sidebar - Desktop only */}
+          <div className="hidden md:block md:w-[240px] flex-shrink-0">
             {/* Profile card */}
             <div className="bg-white rounded p-4 mb-3">
               <div className="flex items-center gap-3">
@@ -122,8 +154,8 @@ export default function AccountPage() {
             {/* DASHBOARD */}
             {tab === "dashboard" && (
               <div className="space-y-3">
-                <div className="bg-white rounded p-5">
-                  <h2 className="text-lg font-bold text-gray-900 mb-4">Welcome back, {profile.name.split(" ")[0]}! 👋</h2>
+                <div className="bg-white rounded p-4 sm:p-5">
+                  <h2 className="text-base sm:text-lg font-bold text-gray-900 mb-4">Welcome back, {profile.name.split(" ")[0]}! 👋</h2>
 
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
                     {[
@@ -149,12 +181,12 @@ export default function AccountPage() {
                   <h3 className="font-bold text-gray-800 mb-3 text-sm">Recent Orders</h3>
                   <div className="space-y-2">
                     {mockOrders.slice(0, 3).map((o) => (
-                      <div key={o.id} className="flex items-center justify-between bg-gray-50 rounded p-3">
-                        <div>
+                      <div key={o.id} className="flex items-center justify-between bg-gray-50 rounded p-3 flex-wrap gap-2">
+                        <div className="min-w-0">
                           <p className="text-sm font-semibold text-gray-800">{o.id}</p>
                           <p className="text-xs text-gray-400">{o.date} · {o.items} items</p>
                         </div>
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-2 flex-shrink-0">
                           <span className={`text-xs font-semibold px-2 py-1 rounded-full ${o.statusColor}`}>{o.status}</span>
                           <span className="text-sm font-bold text-[#f57224]">৳{o.total.toLocaleString()}</span>
                         </div>
@@ -188,11 +220,11 @@ export default function AccountPage() {
 
             {/* ORDERS */}
             {tab === "orders" && (
-              <div className="bg-white rounded p-5">
-                <h2 className="text-lg font-bold text-gray-900 mb-4">My Orders</h2>
+              <div className="bg-white rounded p-4 sm:p-5">
+                <h2 className="text-base sm:text-lg font-bold text-gray-900 mb-4">My Orders</h2>
                 <div className="space-y-3">
                   {mockOrders.map((o) => (
-                    <div key={o.id} className="border border-gray-100 rounded p-4 hover:border-gray-200 transition-colors">
+                    <div key={o.id} className="border border-gray-100 rounded p-3 sm:p-4 hover:border-gray-200 transition-colors">
                       <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                         <div>
                           <p className="font-bold text-sm text-gray-900">{o.id}</p>
@@ -200,7 +232,7 @@ export default function AccountPage() {
                         </div>
                         <span className={`text-xs font-bold px-3 py-1 rounded-full ${o.statusColor}`}>{o.status}</span>
                       </div>
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between flex-wrap gap-2">
                         <span className="text-base font-black text-[#f57224]">৳{o.total.toLocaleString()}</span>
                         <div className="flex gap-2">
                           {o.status === "Delivered" && (
@@ -221,9 +253,9 @@ export default function AccountPage() {
 
             {/* WISHLIST */}
             {tab === "wishlist" && (
-              <div className="bg-white rounded p-5">
-                <h2 className="text-lg font-bold text-gray-900 mb-4">My Wishlist ({mockWishlist.length})</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="bg-white rounded p-4 sm:p-5">
+                <h2 className="text-base sm:text-lg font-bold text-gray-900 mb-4">My Wishlist ({mockWishlist.length})</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                   {mockWishlist.map((item) => (
                     <div key={item.id} className="border border-gray-100 rounded overflow-hidden hover:shadow-md transition-shadow">
                       <Link href={`/product/${item.id}`}>
@@ -231,12 +263,12 @@ export default function AccountPage() {
                           <img src={item.image} alt={item.name} className="w-full h-full object-contain p-3" />
                         </div>
                       </Link>
-                      <div className="p-3">
+                      <div className="p-2 sm:p-3">
                         <Link href={`/product/${item.id}`}>
-                          <p className="text-sm text-gray-700 line-clamp-2 hover:text-[#f57224] transition-colors">{item.name}</p>
+                          <p className="text-xs sm:text-sm text-gray-700 line-clamp-2 hover:text-[#f57224] transition-colors">{item.name}</p>
                         </Link>
                         <div className="flex items-baseline gap-1 mt-1">
-                          <span className="font-bold text-[#f57224]">৳{item.price}</span>
+                          <span className="font-bold text-[#f57224] text-sm">৳{item.price}</span>
                           <span className="text-xs text-gray-400 line-through">৳{item.original}</span>
                         </div>
                         <div className="flex gap-2 mt-2">
@@ -245,7 +277,7 @@ export default function AccountPage() {
                             Add to Cart
                           </Link>
                           <button className="text-gray-400 hover:text-red-400 transition-colors px-2">
-                            <Heart size={16} fill="currentColor" />
+                            <Heart size={14} fill="currentColor" />
                           </button>
                         </div>
                       </div>
@@ -257,9 +289,9 @@ export default function AccountPage() {
 
             {/* ADDRESS */}
             {tab === "address" && (
-              <div className="bg-white rounded p-5">
+              <div className="bg-white rounded p-4 sm:p-5">
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-lg font-bold text-gray-900">My Addresses</h2>
+                  <h2 className="text-base sm:text-lg font-bold text-gray-900">My Addresses</h2>
                   <button className="text-sm bg-[#f57224] text-white px-4 py-2 rounded font-semibold hover:bg-[#e06510] transition-colors">
                     + Add New
                   </button>
@@ -270,16 +302,16 @@ export default function AccountPage() {
                     { label: "Office", address: "Tower 7, Gulshan Avenue, Gulshan 1, Dhaka 1212", default: false },
                   ].map((a) => (
                     <div key={a.label} className="border border-gray-100 rounded p-4">
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <div className="flex items-center gap-2 mb-1">
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="min-w-0">
+                          <div className="flex items-center gap-2 mb-1 flex-wrap">
                             <span className="font-bold text-sm text-gray-900">{a.label}</span>
                             {a.default && <span className="text-xs bg-[#f57224] text-white px-2 py-0.5 rounded-full">Default</span>}
                           </div>
                           <p className="text-sm text-gray-500">{a.address}</p>
                           <p className="text-sm text-gray-500">Phone: 01700000000</p>
                         </div>
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 flex-shrink-0">
                           <button className="text-xs text-[#f57224] hover:underline">Edit</button>
                           {!a.default && <button className="text-xs text-gray-400 hover:text-red-400">Delete</button>}
                         </div>
@@ -292,8 +324,8 @@ export default function AccountPage() {
 
             {/* SETTINGS */}
             {tab === "settings" && (
-              <div className="bg-white rounded p-5">
-                <h2 className="text-lg font-bold text-gray-900 mb-4">Account Settings</h2>
+              <div className="bg-white rounded p-4 sm:p-5">
+                <h2 className="text-base sm:text-lg font-bold text-gray-900 mb-4">Account Settings</h2>
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -336,7 +368,7 @@ export default function AccountPage() {
                     </div>
                   </div>
 
-                  <button className="bg-[#f57224] hover:bg-[#e06510] text-white font-bold px-8 py-3 rounded transition-colors">
+                  <button className="w-full sm:w-auto bg-[#f57224] hover:bg-[#e06510] text-white font-bold px-8 py-3 rounded transition-colors">
                     Save Changes
                   </button>
                 </div>
