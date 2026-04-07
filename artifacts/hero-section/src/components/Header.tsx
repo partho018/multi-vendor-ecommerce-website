@@ -15,7 +15,7 @@ export default function Header() {
                   <path d="M10 20 L20 5 L30 20 L20 35 Z" fill="#ff8c37" />
                 </svg>
               </div>
-              <span className="text-2xl font-bold text-[#f57224] tracking-tight">Lazada</span>
+              <span className="text-2xl font-bold text-[#f57224] tracking-tight">GlobalMart</span>
             </div>
           </a>
 
@@ -24,7 +24,7 @@ export default function Header() {
             <div className="flex w-full rounded-sm overflow-hidden" style={{ backgroundColor: "#EFF0F5" }}>
               <input
                 type="text"
-                placeholder="Search in Lazada"
+                placeholder="Search Products..."
                 className="flex-1 px-4 py-[10px] text-sm outline-none text-gray-700"
                 style={{ backgroundColor: "#EFF0F5" }}
               />
@@ -57,7 +57,7 @@ export default function Header() {
                     <path d="M10 20 L20 5 L30 20 L20 35 Z" fill="#ff8c37" />
                   </svg>
                 </div>
-                <span className="text-xl font-bold text-[#f57224] tracking-tight">Lazada</span>
+                <span className="text-xl font-bold text-[#f57224] tracking-tight">GlobalMart</span>
               </div>
             </a>
             {/* Cart + Wallet on mobile */}
@@ -74,7 +74,7 @@ export default function Header() {
           <div className="flex w-full rounded-sm overflow-hidden" style={{ backgroundColor: "#EFF0F5" }}>
             <input
               type="text"
-              placeholder="Search in Lazada"
+              placeholder="Search Products..."
               className="flex-1 px-3 py-2 text-sm outline-none text-gray-700"
               style={{ backgroundColor: "#EFF0F5" }}
             />
