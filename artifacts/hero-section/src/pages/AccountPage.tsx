@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { User, Package, Heart, MapPin, Settings, ChevronRight, Star, LogOut, Bell, Clock } from "lucide-react";
 import TopNav from "@/components/TopNav";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useAuth } from "@/context/AuthContext";
 
 type Tab = "dashboard" | "orders" | "wishlist" | "address" | "settings";
 
@@ -31,10 +32,19 @@ const navItems: { key: Tab; label: string; icon: typeof User }[] = [
 
 export default function AccountPage() {
   const [tab, setTab] = useState<Tab>("dashboard");
+  const { user, logout } = useAuth();
+  const [, navigate] = useLocation();
   const [profile, setProfile] = useState({
-    name: "Rahim Khan", email: "rahim@email.com",
-    phone: "01700000000", gender: "Male",
+    name: user?.name || "User",
+    email: user?.email || "",
+    phone: user?.phone || "",
+    gender: "Not set",
   });
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
 
   return (
     <div className="min-h-screen bg-[#f5f5f5]">
@@ -82,7 +92,7 @@ export default function AccountPage() {
                 </button>
               ))}
               <div className="border-t border-gray-100">
-                <button className="w-full flex items-center gap-3 px-4 py-3 text-sm text-red-400 hover:bg-red-50 transition-colors">
+                <button onClick={handleLogout} className="w-full flex items-center gap-3 px-4 py-3 text-sm text-red-400 hover:bg-red-50 transition-colors">
                   <LogOut size={16} /><span>Sign Out</span>
                 </button>
               </div>

@@ -1,9 +1,17 @@
-import { Search, ShoppingCart, User } from "lucide-react";
-import { Link } from "wouter";
+import { Search, ShoppingCart, User, LogOut } from "lucide-react";
+import { Link, useLocation } from "wouter";
 import { useCart } from "@/context/CartContext";
+import { useAuth } from "@/context/AuthContext";
 
 export default function Header() {
   const { totalItems } = useCart();
+  const { user, logout, isAuthenticated } = useAuth();
+  const [, navigate] = useLocation();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
 
   return (
     <div className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
@@ -56,14 +64,32 @@ export default function Header() {
               </div>
             </Link>
 
-            <Link href="/account" className="flex-shrink-0">
-              <div className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
-                <div className="w-7 h-7 rounded-full bg-[#f57224] flex items-center justify-center">
-                  <User size={14} className="text-white" />
-                </div>
-                <span className="text-xs text-gray-600 hidden lg:block">Account</span>
+            {isAuthenticated ? (
+              <div className="flex items-center gap-2 flex-shrink-0">
+                <Link href="/account">
+                  <div className="flex items-center gap-1.5 hover:opacity-80 transition-opacity cursor-pointer">
+                    <div className="w-7 h-7 rounded-full bg-[#f57224] flex items-center justify-center">
+                      <User size={14} className="text-white" />
+                    </div>
+                    <span className="text-xs text-gray-700 font-medium hidden lg:block max-w-[80px] truncate">
+                      {user?.name.split(" ")[0]}
+                    </span>
+                  </div>
+                </Link>
+                <button onClick={handleLogout} title="Logout" className="text-gray-400 hover:text-red-500 transition-colors hidden lg:block">
+                  <LogOut size={15} />
+                </button>
               </div>
-            </Link>
+            ) : (
+              <Link href="/login" className="flex-shrink-0">
+                <div className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
+                  <div className="w-7 h-7 rounded-full bg-gray-200 flex items-center justify-center">
+                    <User size={14} className="text-gray-500" />
+                  </div>
+                  <span className="text-xs text-gray-600 hidden lg:block">Login</span>
+                </div>
+              </Link>
+            )}
 
             <Link href="#" className="flex-shrink-0 hidden xl:block">
               <img src="/btn-lazada-wallet.png" alt="Lazada Wallet" className="h-[38px] w-auto" />
@@ -88,9 +114,9 @@ export default function Header() {
             </Link>
 
             <div className="flex items-center gap-3 ml-auto">
-              <Link href="/account" className="flex-shrink-0">
-                <div className="w-8 h-8 rounded-full bg-[#f57224] flex items-center justify-center">
-                  <User size={15} className="text-white" />
+              <Link href={isAuthenticated ? "/account" : "/login"} className="flex-shrink-0">
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isAuthenticated ? "bg-[#f57224]" : "bg-gray-200"}`}>
+                  <User size={15} className={isAuthenticated ? "text-white" : "text-gray-500"} />
                 </div>
               </Link>
               <Link href="/cart" className="flex-shrink-0 relative">
