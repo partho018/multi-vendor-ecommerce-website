@@ -1,3 +1,5 @@
+import { Link } from "wouter";
+
 const products = [
   { id: 1,  image: "/flash-p6.avif",  badge: "LazMall", name: "Metal Case for A6 AirPods, Premium Protective Cover with Carabiner", price: 180,  original: 300, discount: 40, rating: 4.5, reviews: 416  },
   { id: 2,  image: "/flash-p2.webp",  badge: null,       name: "M11 Handheld Bladeless Fan 3000mAh 199 Speed Digital Display", price: 195,  original: 813, discount: 76, rating: 4.8, reviews: 8033 },
@@ -50,21 +52,25 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 export default function JustForYou() {
+  const TOTAL_PRODUCTS = 24;
   return (
     <div className="mt-3">
       <h2 className="text-xl font-bold text-gray-900 mb-2 px-1">Just For You</h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-[5px]">
-        {products.map((p) => (
-          <div
+        {products.map((p) => {
+          const productId = ((p.id - 1) % TOTAL_PRODUCTS) + 1;
+          return (
+          <Link
             key={p.id}
-            className="bg-white cursor-pointer hover:shadow-md transition-shadow duration-200 flex flex-col"
+            href={`/product/${productId}`}
+            className="bg-white cursor-pointer hover:shadow-md transition-shadow duration-200 flex flex-col group"
           >
             <div className="relative w-full bg-white overflow-hidden" style={{ paddingTop: "100%" }}>
               <img
                 src={p.image}
                 alt={p.name}
-                className="absolute inset-0 w-full h-full object-contain p-2"
+                className="absolute inset-0 w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
               />
               {p.badge && (
                 <div className="absolute top-2 left-2 bg-[#F05024] text-white text-[9px] font-bold px-1 py-0.5 rounded-sm">
@@ -74,7 +80,7 @@ export default function JustForYou() {
             </div>
 
             <div className="p-2 flex flex-col gap-1 flex-1">
-              <p className="text-xs text-gray-700 line-clamp-2 leading-tight">{p.name}</p>
+              <p className="text-xs text-gray-700 line-clamp-2 leading-tight group-hover:text-[#f57224] transition-colors">{p.name}</p>
               <div className="flex items-baseline gap-1 flex-wrap">
                 <span className="text-sm font-bold text-[#f57224]">৳{p.price}</span>
                 <span className="text-[10px] text-gray-400 line-through">৳{p.original}</span>
@@ -85,8 +91,9 @@ export default function JustForYou() {
                 <span className="text-[10px] text-gray-400">({p.reviews})</span>
               </div>
             </div>
-          </div>
-        ))}
+          </Link>
+          );
+        })}
       </div>
 
       <div className="bg-white mt-[5px] pt-6 pb-4 flex items-center justify-center">

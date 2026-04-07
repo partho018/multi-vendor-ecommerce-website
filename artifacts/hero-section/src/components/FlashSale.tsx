@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 
 const products = [
   { id: 1, brand: "PRAN OFFICIAL", brandColor: "#e8000d", name: "PRAN Mango Juice Drink 250ml Pack of 6 ...", image: "/flash-p1.avif", price: "৳ 180", originalPrice: "৳ 240", discount: "-25%", badge: "BESTSELLER" },
@@ -50,31 +51,31 @@ export default function FlashSale() {
             <TimerBlock value={s as number} />
           </div>
         </div>
-        <button className="border border-[#f57224] text-[#f57224] text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 sm:py-3 rounded hover:bg-orange-50 transition-colors">
+        <Link href="/shop" className="border border-[#f57224] text-[#f57224] text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 sm:py-3 rounded hover:bg-orange-50 transition-colors">
           SHOP ALL PRODUCTS
-        </button>
+        </Link>
       </div>
 
       <hr className="border-t border-gray-200 mb-4" />
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
         {products.map((p) => (
-          <div key={p.id} className="cursor-pointer group border border-transparent hover:border-gray-200 hover:shadow-md rounded transition-all duration-200 p-1">
+          <Link key={p.id} href={`/product/${p.id}`} className="cursor-pointer group border border-transparent hover:border-gray-200 hover:shadow-md rounded transition-all duration-200 p-1 block">
             <div className="relative rounded overflow-hidden bg-gray-50 aspect-square mb-2">
-              <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
+              <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               {p.badge && (
                 <div className="absolute bottom-1 left-1 bg-[#f57224] text-white text-[9px] font-bold px-1.5 py-0.5 rounded">
                   {p.badge}
                 </div>
               )}
             </div>
-            <p className="text-xs text-gray-700 leading-snug line-clamp-2 mb-1">{p.name}</p>
+            <p className="text-xs text-gray-700 leading-snug line-clamp-2 mb-1 group-hover:text-[#f57224] transition-colors">{p.name}</p>
             <p className="text-[#f57224] font-bold text-sm">{p.price}</p>
             <div className="flex items-center gap-1 mt-0.5">
               <span className="text-gray-400 text-[11px] line-through">{p.originalPrice}</span>
               <span className="text-[11px] text-gray-500">{p.discount}</span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
