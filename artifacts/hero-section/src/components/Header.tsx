@@ -9,7 +9,7 @@ export default function Header() {
     <div className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
       <div className="max-w-[1200px] mx-auto px-2">
         {/* Desktop layout */}
-        <div className="hidden md:flex items-center h-[64px] relative">
+        <div className="hidden md:flex items-center h-[64px] gap-4">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <div className="flex items-center gap-1">
@@ -23,8 +23,8 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Search bar - absolutely centered */}
-          <div className="absolute left-1/2 -translate-x-1/2 w-[620px] flex items-center">
+          {/* Search bar - flex-grow */}
+          <div className="flex-1 flex items-center">
             <div className="flex w-full rounded-sm overflow-hidden" style={{ backgroundColor: "#EFF0F5" }}>
               <input
                 type="text"
@@ -41,7 +41,7 @@ export default function Header() {
           </div>
 
           {/* Right side */}
-          <div className="ml-auto flex items-center gap-4">
+          <div className="flex-shrink-0 flex items-center gap-4">
             <Link href="/cart" className="flex-shrink-0 relative">
               <div className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
                 <div className="relative">
