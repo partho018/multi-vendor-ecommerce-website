@@ -1,4 +1,4 @@
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartProvider, useCart } from "@/context/CartContext";
@@ -13,6 +13,14 @@ import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
 
+function ScrollToTop() {
+  const [location] = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [location]);
+  return null;
+}
+
 function CartNotification() {
   const { notification, dismissNotification } = useCart();
   useEffect(() => {
@@ -25,7 +33,7 @@ function CartNotification() {
   if (!notification) return null;
   return (
     <div
-      className="fixed top-4 right-4 z-[9999] bg-white border border-green-200 shadow-lg rounded-lg px-4 py-3 max-w-[320px] flex items-start gap-3 animate-in slide-in-from-right"
+      className="fixed top-4 right-4 z-[9999] bg-white border border-green-200 shadow-lg rounded-lg px-4 py-3 max-w-[320px] flex items-start gap-3"
       style={{ animation: "slideIn 0.3s ease-out" }}
     >
       <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -62,6 +70,7 @@ function App() {
       <TooltipProvider>
         <CartProvider>
           <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+            <ScrollToTop />
             <CartNotification />
             <Router />
           </WouterRouter>
