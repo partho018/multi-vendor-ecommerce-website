@@ -129,9 +129,9 @@ export default function Header() {
             <Link href="/shop" className="hover:text-[#f57224] transition-colors">All Products</Link>
             <Link href="/shop" className="hover:text-[#f57224] transition-colors">Flash Sale</Link>
             <Link href="/shop" className="hover:text-[#f57224] transition-colors">LazMall</Link>
-            <Link href="/shop" className="hover:text-[#f57224] transition-colors">Electronics</Link>
-            <Link href="/shop" className="hover:text-[#f57224] transition-colors">Fashion</Link>
-            <Link href="/shop" className="hover:text-[#f57224] transition-colors">Home & Kitchen</Link>
+            <Link href="/shop?category=Electronics" className="hover:text-[#f57224] transition-colors">Electronics</Link>
+            <Link href="/shop?category=Fashion" className="hover:text-[#f57224] transition-colors">Fashion</Link>
+            <Link href="/shop?category=Home%20%26%20Kitchen" className="hover:text-[#f57224] transition-colors">Home & Kitchen</Link>
           </div>
         </div>
       </div>

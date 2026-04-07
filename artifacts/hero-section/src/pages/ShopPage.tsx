@@ -1,5 +1,5 @@
-import { useState, useMemo } from "react";
-import { Link } from "wouter";
+import { useState, useMemo, useEffect } from "react";
+import { Link, useSearch } from "wouter";
 import { Search, SlidersHorizontal, Star, ShoppingCart, ChevronDown } from "lucide-react";
 import { products, categories } from "@/data/products";
 import { useCart } from "@/context/CartContext";
@@ -30,12 +30,20 @@ function StarRating({ rating, small }: { rating: number; small?: boolean }) {
 
 export default function ShopPage() {
   const { addToCart } = useCart();
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const searchString = useSearch();
+  const urlCategory = new URLSearchParams(searchString).get("category") || "All";
+
+  const [selectedCategory, setSelectedCategory] = useState(urlCategory);
   const [searchQuery, setSearchQuery] = useState("");
   const [sort, setSort] = useState("Best Match");
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 2000]);
   const [minRating, setMinRating] = useState(0);
   const [showFilter, setShowFilter] = useState(false);
+
+  useEffect(() => {
+    const cat = new URLSearchParams(searchString).get("category") || "All";
+    setSelectedCategory(cat);
+  }, [searchString]);
 
   const filtered = useMemo(() => {
     let list = [...products];
